@@ -10,12 +10,9 @@ function isMobile() {
 }
 
 function resize_page() {
-    console.log("1111");
     if (isMobile()) {
-        console.log("2222");
         resize_size(document.documentElement.clientWidth);
     } else {
-        console.log("3333");
         resize_size(375);
     }
 }
