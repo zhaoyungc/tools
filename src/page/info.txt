@@ -1,0 +1,55 @@
+配置话的页面生成工具
+1，支持自定义链接，和自定义插槽
+2，支持默认链接
+
+项目目录：
+lazy_config
+- configs  配置，公共信息存放
+    -- edit_form  把数据编辑操作展现在页面上的组件
+        -- baseForms.vue 
+        -- index.vue
+        -- uploadImage.vue 只在操作数据时上传图片使用，其他地方有需要另写
+
+    -- normal_props 基础数据配置，均以function操作
+        -- page_config 配置化页面用到的数据
+            -- *
+            -- *
+            -- *
+        -- page_act.js 活动配置用到的数据
+        -- page_all.js 配置化的全局数据
+
+    -- page_components 页面配置组件类
+        -- components 基础类的组件
+        -- page_*  页面级 拼合组件，使用一层层数据处理的包装层
+            -- * 要包装的组件， 可以有其他地方引入
+
+    -- page_preview 核心，所有数据与展示的处理逻辑，以render为基础
+        -- handle_preview.js 处理的编辑操作的逻辑，带有操作按钮等
+        -- online_init.js 处理发布页面的基础逻辑初始化操作
+        -- online_preview.js 处理发布页面的逻辑， 省略掉了多余的操作逻辑
+
+    -- utils
+        -- LS.js 测试用存储数据
+        -- paramSwitch.js 把配置化数据精简化的逻辑，把keyObject 与 keyValue数据互转
+
+- page_config  配置项目入口
+- page_preview  配置项目真实页面入口
+
+
+
+页面相关的配置是动态的，要加类型使用key valueObject 类型
+榜单规则配置是固定的，用 key value 形式
+
+权限控制
+0-2, 基本权限，可以配置相关内容等等
+    活动配置， 通用配置， 页面配置
+
+3， 代码化使用规则权限， 可以使用自定义类的插槽
+4，高深的权限，全部开放 
+
+
+页面层级
+0-49, 自定义页面内的层级
+50, 编辑提示组件信息的层级
+51-69, 底部条的层级
+70-99， 弹窗，粉丝榜等层级

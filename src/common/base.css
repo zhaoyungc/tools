@@ -1,0 +1,20 @@
+html,
+body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: cursive;
+    color: #000000;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.over-hidden{
+    overflow: hidden; /* 隐藏超出部分的内容 */
+    white-space: nowrap; /* 禁止文本换行 */
+    text-overflow: ellipsis; /* 在文本末尾添加省略号 */
+}
